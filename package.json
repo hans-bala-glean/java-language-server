@@ -4,7 +4,7 @@
     "description": "Java support using the Java Compiler API",
     "icon": "icon.png",
     "version": "0.2.46",
-    "publisher": "georgewfraser",
+    "publisher": "glean",
     "repository": {
         "type": "git",
         "url": "https://github.com/georgewfraser/java-language-server"
