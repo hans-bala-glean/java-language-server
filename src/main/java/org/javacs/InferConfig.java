@@ -66,16 +66,16 @@ class InferConfig {
             return result;
         }
 
-        // Maven
-        var pomXml = workspaceRoot.resolve("pom.xml");
-        if (Files.exists(pomXml)) {
-            return mvnDependencies(pomXml, "dependency:list");
-        }
-
         // Bazel
         var bazelWorkspaceRoot = bazelWorkspaceRoot();
         if (Files.exists(bazelWorkspaceRoot.resolve("WORKSPACE"))) {
             return bazelClasspath(bazelWorkspaceRoot);
+        }
+
+        // Maven
+        var pomXml = workspaceRoot.resolve("pom.xml");
+        if (Files.exists(pomXml)) {
+            return mvnDependencies(pomXml, "dependency:list");
         }
 
         return Collections.emptySet();
